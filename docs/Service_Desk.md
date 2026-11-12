@@ -509,7 +509,7 @@ Prinsip: **satu halaman A4**, hanya field wajib, catatan dibatasi jumlah karakte
 
 **Header**
 
-| Service Desk | LAPORAN PEKERJAAN | No. Tiket `{no_tiket}` , Status `{status_akhir}` |
+| No | LAPORAN PEKERJAAN | No. Tiket `{no_tiket}` , Status `{status_akhir}` |
 |---|---|---|
 
 **1. Informasi Tiket**
