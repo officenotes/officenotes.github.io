@@ -3,7 +3,7 @@
 
 | Atribut | Keterangan |
 |---|---|
-| Nama Dokumen | BRD BeOne Service Desk |
+| Nama Dokumen | BRD Service Desk |
 | Versi | 0.2 (Draft) |
 | Tanggal | 12 November 2026 |
 | Penyusun | @septian.narsa |
@@ -26,7 +26,7 @@
 
 ## 1. Ringkasan Eksekutif
 
-BeOne adalah sistem service desk (ITSM) yang menghubungkan **Partner** (pihak yang membutuhkan layanan perbaikan/perawatan) dengan **Corporate** (pihak yang menyediakan layanan dan teknisi). Saat ini penugasan teknisi dilakukan **secara manual** oleh vendor/admin, sehingga bergantung pada kemampuan admin mengetahui teknisi mana yang sedang kosong.
+Service Desk adalah sistem yang menghubungkan **Partner** (pihak yang membutuhkan layanan perbaikan/perawatan) dengan **Corporate** (pihak yang menyediakan layanan dan teknisi). Saat ini penugasan teknisi dilakukan **secara manual** oleh vendor/admin, sehingga bergantung pada kemampuan admin mengetahui teknisi mana yang sedang kosong.
 
 Proyek ini bertujuan membangun proses end-to-end berbasis aplikasi (mobile dan web) yang mencakup pendaftaran aset, pembuatan tiket oleh Partner dengan approval berjenjang, **penugasan teknisi otomatis** berdasarkan kompetensi, jumlah tiket, dan prioritas, pelaksanaan pekerjaan oleh teknisi, serta pelaporan per tiket yang menjadi dasar penagihan di luar platform.
 
@@ -114,7 +114,7 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 | Supervisor Corporate | Corporate | Monitoring, menangani eskalasi, mencari teknisi pengganti/tambahan, mengubah jadwal kunjungan |
 | Admin Corporate | Corporate | Dashboard monitoring, mengelola parameter (matrix problem, kategori aset), melihat aset |
 | Teknisi | Corporate | Menangani tiket, mencatat aktivitas, membuat laporan |
-| Sistem (Auto-Assignment Engine) | BeOne | Menugaskan teknisi otomatis |
+| Sistem (Auto-Assignment Engine) | Service Desk | Menugaskan teknisi otomatis |
 
 > Istilah **Teknisi** dipakai seragam untuk pelaksana pekerjaan, menggantikan "Teknisi Corporate", "Teknisi Partner", dan "Support" pada FSD.
 
@@ -432,7 +432,7 @@ stateDiagram-v2
 ### 12.1 Asumsi
 
 1. Setiap teknisi memiliki satu atau lebih kompetensi yang terdata di sistem.
-2. Ketersediaan teknisi dihitung dari data tiket aktif di BeOne.
+2. Ketersediaan teknisi dihitung dari data tiket aktif di Service Desk.
 3. Supervisor Corporate tetap tersedia untuk menangani pengecualian.
 4. Partner memiliki hierarki approval yang terdefinisi (staff, SPV, manager).
 5. Teknisi memiliki perangkat mobile dengan kamera dan GPS.
@@ -494,7 +494,7 @@ stateDiagram-v2
 
 | Istilah | Arti |
 |---|---|
-| BeOne | Nama aplikasi service desk (mobile dan web) |
+| Service Desk | Nama aplikasi service desk (mobile dan web) |
 | ITSM | IT Service Management |
 | Partner | Pihak yang meminta layanan support |
 | Corporate | Pihak penyedia layanan dan teknisi |
@@ -517,7 +517,7 @@ Prinsip: **satu halaman A4**, hanya field wajib, catatan dibatasi jumlah karakte
 
 **Header**
 
-| BeOne | LAPORAN PEKERJAAN | No. Tiket `{no_tiket}` , Status `{status_akhir}` |
+| Service Desk | LAPORAN PEKERJAAN | No. Tiket `{no_tiket}` , Status `{status_akhir}` |
 |---|---|---|
 
 **1. Informasi Tiket**
