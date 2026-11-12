@@ -11,7 +11,6 @@
 
 **Keterangan penanda pada dokumen ini**
 
-- **[FSD]** : berasal dari dokumen FSD yang ada.
 - **[Keputusan]** : sudah diputuskan pada diskusi analisis.
 - **[Usulan]** : usulan penyusun, perlu divalidasi stakeholder.
 
@@ -85,8 +84,8 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 
 ### 4.1 Dalam Lingkup (In Scope)
 
-1. **Register Asset** (web, dan mobile bila disebut FSD): pendaftaran, edit, pencarian, approval aset, parameter kategori.
-2. **Ticketing Partner** (mobile, sebagian web): pembuatan request CM/PM/SM, matrix problem, approval berjenjang, notifikasi, riwayat, pembatalan.
+1. **Register Asset** (web, dan mobile): pendaftaran, edit, pencarian, approval aset, parameter kategori.
+2. **Ticketing Partner** (mobile dan web): pembuatan request CM/PM/SM, matrix problem, approval berjenjang, notifikasi, riwayat, pembatalan.
 3. **Penugasan teknisi otomatis**: berdasarkan kompetensi, jumlah tiket, prioritas, dan lokasi/rute.
 4. **Ticketing Technician** (mobile): daftar tiket, pencatatan aktivitas, foto, tanda tangan, status, eskalasi, ketidakhadiran.
 5. **Pelaporan**: laporan pekerjaan teknisi (PDF, template standar), report per tiket untuk penagihan, dan log aktivitas standar.
@@ -100,7 +99,7 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 | Integrasi absensi/jadwal kerja teknisi | Ketersediaan awal dihitung dari data tiket aktif |
 | Modul tagihan dan pembayaran | Penagihan per tiket dilakukan di luar platform; platform hanya menghasilkan report yang dikirim ke client |
 | Manajemen stok suku cadang | Hanya status PENDING karena menunggu suku cadang |
-| Modul HR/penilaian kinerja teknisi | Tidak disebut di FSD |
+| Modul HR/penilaian kinerja teknisi | Tidak termasuk dalam fitur yang dibangun |
 
 ---
 
@@ -116,7 +115,6 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 | Teknisi | Corporate | Menangani tiket, mencatat aktivitas, membuat laporan |
 | Sistem (Auto-Assignment Engine) | Service Desk | Menugaskan teknisi otomatis |
 
-> Istilah **Teknisi** dipakai seragam untuk pelaksana pekerjaan, menggantikan "Teknisi Corporate", "Teknisi Partner", dan "Support" pada FSD.
 
 ---
 
@@ -182,22 +180,22 @@ flowchart TD
 
 ### 7.1 Aturan Penugasan Teknisi Otomatis
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-AS-01 | Penugasan hanya dipicu setelah tiket **full approved** oleh seluruh level approver Partner | [FSD] |
-| BR-AS-02 | **Kompetensi menjadi syarat utama.** Kandidat teknisi pertama adalah teknisi yang kompetensinya sesuai dengan matrix problem tiket | [Keputusan] |
-| BR-AS-03 | Dari kandidat berkompetensi sesuai, sistem memilih teknisi dengan **beban kerja terendah**. Beban kerja diukur dari **jumlah tiket aktif dan tingkat prioritas tiket** | [Keputusan] |
-| BR-AS-04 | Jika seluruh teknisi berkompetensi sesuai berada pada kondisi **high load** (beban melewati ambang batas), tiket **dapat dialihkan ke teknisi lain** di luar kompetensi utama | [Keputusan] |
-| BR-AS-05 | Teknisi pengganti pada BR-AS-04 dipilih dari teknisi berkompetensi sekunder atau umum. Selama berstatus teknisi, yang bersangkutan dapat ditugaskan; sistem memilih yang bebannya terendah dan masih di bawah ambang | [Keputusan] |
-| BR-AS-06 | Tiket berprioritas **Urgent** dicarikan lebih dulu ke **teknisi khusus Urgent** yang sedang kosong | [FSD] |
-| BR-AS-07 | Jika tidak ada teknisi khusus Urgent yang kosong, sistem mencari teknisi yang pekerjaannya searah/dekat dengan lokasi tiket | [FSD] |
-| BR-AS-08 | Untuk tiket noNUrgent, penugasan juga mempertimbangkan lokasi dan rute pekerjaan teknisi, setelah syarat kompetensi dan batas beban terpenuhi | [FSD], [Keputusan] |
-| BR-AS-09 | Jika tidak ada kandidat sama sekali, tiket masuk antrean dan sistem memberi notifikasi ke Supervisor Corporate untuk assign manual | [Keputusan] |
-| BR-AS-10 | Supervisor Corporate dapat melakukan **override/re-assign manual** pada kasus eskalasi atau teknisi berhalangan | [FSD] |
-| BR-AS-11 | Penentuan hari kerja mengabaikan hari libur pada penjadwalan CM | [FSD] |
-| BR-AS-12 | Setiap penugasan (otomatis atau manual) dicatat dalam log beserta alasan pemilihan | [Usulan] |
-| BR-AS-13 | Parameter "maksimum teknisi di-assign tiket per hari" pada FSD digantikan oleh ambang beban (Bagian 7.2); tidak ada parameter terpisah | [Keputusan] |
-| BR-AS-14 | Ketersediaan teknisi dihitung dari data tiket aktif | [Keputusan] |
+| ID | Aturan |
+|---|---|
+| BR-AS-01 | Penugasan hanya dipicu setelah tiket **full approved** oleh seluruh level approver Partner |
+| BR-AS-02 | **Kompetensi menjadi syarat utama.** Kandidat teknisi pertama adalah teknisi yang kompetensinya sesuai dengan matrix problem tiket |
+| BR-AS-03 | Dari kandidat berkompetensi sesuai, sistem memilih teknisi dengan **beban kerja terendah**. Beban kerja diukur dari **jumlah tiket aktif dan tingkat prioritas tiket** |
+| BR-AS-04 | Jika seluruh teknisi berkompetensi sesuai berada pada kondisi **high load** (beban melewati ambang batas), tiket **dapat dialihkan ke teknisi lain** di luar kompetensi utama |
+| BR-AS-05 | Teknisi pengganti pada BR-AS-04 dipilih dari teknisi berkompetensi sekunder atau umum. Selama berstatus teknisi, yang bersangkutan dapat ditugaskan; sistem memilih yang bebannya terendah dan masih di bawah ambang |
+| BR-AS-06 | Tiket berprioritas **Urgent** dicarikan lebih dulu ke **teknisi khusus Urgent** yang sedang kosong |
+| BR-AS-07 | Jika tidak ada teknisi khusus Urgent yang kosong, sistem mencari teknisi yang pekerjaannya searah/dekat dengan lokasi tiket |
+| BR-AS-08 | Untuk tiket noNUrgent, penugasan juga mempertimbangkan lokasi dan rute pekerjaan teknisi, setelah syarat kompetensi dan batas beban terpenuhi |
+| BR-AS-09 | Jika tidak ada kandidat sama sekali, tiket masuk antrean dan sistem memberi notifikasi ke Supervisor Corporate untuk assign manual |
+| BR-AS-10 | Supervisor Corporate dapat melakukan **override/re-assign manual** pada kasus eskalasi atau teknisi berhalangan |
+| BR-AS-11 | Penentuan hari kerja mengabaikan hari libur pada penjadwalan CM |
+| BR-AS-12 | Setiap penugasan (otomatis atau manual) dicatat dalam log beserta alasan pemilihan |
+| BR-AS-13 | Parameter "maksimum teknisi di-assign tiket per hari" digantikan oleh ambang beban (Bagian 7.2) |
+| BR-AS-14 | Ketersediaan teknisi dihitung dari data tiket aktif |
 
 ### 7.2 Model Beban Kerja
 
@@ -214,56 +212,55 @@ Pengukuran beban memakai dua variabel yang sudah diputuskan: **jumlah tiket** da
 - **Ambang high load** = parameter yang dapat diatur Admin Corporate (nilai awal ditetapkan saat konfigurasi).
 - Contoh: teknisi memegang 1 tiket High (3) dan 2 tiket Low (2) memiliki skor 5. Jika ambang = 8, teknisi masih dapat menerima tiket baru.
 
-> Parameter FSD "maksimum teknisi di-assign tiket per hari" digantikan oleh ambang beban ini (BR-AS-13).
 
 ### 7.3 Aturan Request dan Approval
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-RQ-01 | Terdapat tiga jenis request: **CM** (insiden mendadak), **PM** (perawatan rutin berulang), **SM** (bantuan khusus terjadwal dalam rentang waktu tertentu) | [FSD] |
-| BR-RQ-02 | Tanggal pembuatan tiket dibuat otomatis oleh sistem (dd/mm/yyyy HH:mm:ss) | [FSD] |
-| BR-RQ-03 | Level prioritas: Low, Medium, High, Urgent | [FSD] |
-| BR-RQ-04 | Matrix problem wajib diisi (kategori dan detail), bersumber dari parameter yang dikelola Admin Corporate | [FSD] |
-| BR-RQ-05 | Approval bersifat **multilevel/berjenjang** (staff diapprove SPV, SPV diapprove manager) | [FSD] |
-| BR-RQ-06 | Reject wajib disertai alasan; tiket yang ditolak berstatus **Rejected** | [FSD], [Keputusan] |
-| BR-RQ-07 | Requester dapat mengubah request **selama belum full approved** | [FSD] |
-| BR-RQ-08 | Requester dapat membatalkan request (status **Canceled**) selama tidak melewati batas maksimal parameter. Canceled berbeda dari Rejected | [FSD], [Keputusan] |
-| BR-RQ-09 | PM berulang otomatis sesuai periode yang diinput Partner | [FSD] |
+| ID | Aturan |
+|---|---|
+| BR-RQ-01 | Terdapat tiga jenis request: **CM** (insiden mendadak), **PM** (perawatan rutin berulang), **SM** (bantuan khusus terjadwal dalam rentang waktu tertentu) |
+| BR-RQ-02 | Tanggal pembuatan tiket dibuat otomatis oleh sistem (dd/mm/yyyy HH:mm:ss) |
+| BR-RQ-03 | Level prioritas: Low, Medium, High, Urgent |
+| BR-RQ-04 | Matrix problem wajib diisi (kategori dan detail), bersumber dari parameter yang dikelola Admin Corporate |
+| BR-RQ-05 | Approval bersifat **multilevel/berjenjang** (staff diapprove SPV, SPV diapprove manager) |
+| BR-RQ-06 | Reject wajib disertai alasan; tiket yang ditolak berstatus **Rejected** |
+| BR-RQ-07 | Requester dapat mengubah request **selama belum full approved** |
+| BR-RQ-08 | Requester dapat membatalkan request (status **Canceled**) selama tidak melewati batas maksimal parameter. Canceled berbeda dari Rejected |
+| BR-RQ-09 | PM berulang otomatis sesuai periode yang diinput Partner |
 
 ### 7.4 Aturan Pelaksanaan Pekerjaan Teknisi
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-TK-01 | Teknisi menangani tiket sesuai urutan paling urgent | [FSD] |
-| BR-TK-02 | Saat tiba di lokasi, teknisi mencatat kedatangan dan status berubah menjadi **In Progress** | [FSD] |
-| BR-TK-03 | Foto **sebelum** pekerjaan wajib diambil | [FSD] |
-| BR-TK-04 | Jika Asset ID di lapangan berbeda, teknisi dapat menginput informasi aset sebenarnya | [FSD] |
-| BR-TK-05 | Status **PENDING** dipakai bila menunggu suku cadang atau hasil koordinasi | [FSD] |
-| BR-TK-06 | Foto **sesudah** pekerjaan (lampiran bukti) wajib diunggah saat pekerjaan selesai | [FSD] |
-| BR-TK-07 | Teknisi mengisi catatan teknis, membuat/upload tanda tangan, dan meminta tanda tangan PIC lokasi; bila tidak memungkinkan diganti foto dokumentasi | [FSD] |
-| BR-TK-08 | Setelah **COMPLETED**, tiket menjadi **CLOSED** bila tidak ada keluhan | [FSD] |
-| BR-TK-09 | Teknisi berhalangan hadir wajib memberi tahu Supervisor Corporate melalui aplikasi | [FSD] |
-| BR-TK-10 | Teknisi dapat melakukan eskalasi ke Supervisor Corporate. Supervisor Corporate yang memutuskan teknisi pengganti atau tambahan dan memperbarui jadwal kunjungan | [FSD], [Keputusan] |
-| BR-TK-11 | Seluruh teknisi yang ter-assign pada tiket ditampilkan pada detail request | [FSD] |
+| ID | Aturan |
+|---|---|
+| BR-TK-01 | Teknisi menangani tiket sesuai urutan paling urgent |
+| BR-TK-02 | Saat tiba di lokasi, teknisi mencatat kedatangan dan status berubah menjadi **In Progress** |
+| BR-TK-03 | Foto **sebelum** pekerjaan wajib diambil |
+| BR-TK-04 | Jika Asset ID di lapangan berbeda, teknisi dapat menginput informasi aset sebenarnya |
+| BR-TK-05 | Status **PENDING** dipakai bila menunggu suku cadang atau hasil koordinasi |
+| BR-TK-06 | Foto **sesudah** pekerjaan (lampiran bukti) wajib diunggah saat pekerjaan selesai |
+| BR-TK-07 | Teknisi mengisi catatan teknis, membuat/upload tanda tangan, dan meminta tanda tangan PIC lokasi; bila tidak memungkinkan diganti foto dokumentasi |
+| BR-TK-08 | Setelah **COMPLETED**, tiket menjadi **CLOSED** bila tidak ada keluhan |
+| BR-TK-09 | Teknisi berhalangan hadir wajib memberi tahu Supervisor Corporate melalui aplikasi |
+| BR-TK-10 | Teknisi dapat melakukan eskalasi ke Supervisor Corporate. Supervisor Corporate yang memutuskan teknisi pengganti atau tambahan dan memperbarui jadwal kunjungan |
+| BR-TK-11 | Seluruh teknisi yang ter-assign pada tiket ditampilkan pada detail request |
 
 ### 7.5 Aturan Register Asset
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-AT-01 | Pendaftaran aset oleh Partner Maker wajib disetujui Partner Supervisor sebelum aset terdaftar | [FSD] |
-| BR-AT-02 | Field Partner otomatis terisi sesuai akun Partner | [FSD] |
-| BR-AT-03 | Edit aset oleh Partner juga masuk proses approval | [FSD] |
-| BR-AT-04 | Corporate hanya memiliki akses **lihat** terhadap aset | [FSD] |
-| BR-AT-05 | Kategori aset dikelola melalui menu Manajemen Parameter dan dipakai sebagai dropdown | [FSD] |
-| BR-AT-06 | Lokasi aset belum tentu di kantor; pin point lokasi wajib | [FSD] |
+| ID | Aturan |
+|---|---|
+| BR-AT-01 | Pendaftaran aset oleh Partner Maker wajib disetujui Partner Supervisor sebelum aset terdaftar |
+| BR-AT-02 | Field Partner otomatis terisi sesuai akun Partner |
+| BR-AT-03 | Edit aset oleh Partner juga masuk proses approval |
+| BR-AT-04 | Corporate hanya memiliki akses **lihat** terhadap aset |
+| BR-AT-05 | Kategori aset dikelola melalui menu Manajemen Parameter dan dipakai sebagai dropdown |
+| BR-AT-06 | Lokasi aset belum tentu di kantor; pin point lokasi wajib |
 
 ### 7.6 Aturan Rentang Waktu Pengerjaan per Tipe Tiket
 
 | Tipe | Pengisi Rentang Waktu | Aturan | Acuan |
 |---|---|---|---|
-| CM | Sistem | Dijadwalkan otomatis saat penugasan, mengabaikan hari libur, dibatasi ambang beban teknisi | [FSD] |
-| SM | Requester | Requester mengisi rentang pengerjaan (tanggal mulai dan selesai) sesuai kebutuhan; sistem memeriksa ambang beban pada setiap hari dalam rentang | [FSD] |
-| PM | Requester | Requester mengisi rentang waktu per bulan; tiket berulang otomatis sesuai periode yang diinput; sistem memeriksa ambang beban pada setiap jadwal | [FSD] |
+| CM | Sistem | Dijadwalkan otomatis saat penugasan, mengabaikan hari libur, dibatasi ambang beban teknisi |
+| SM | Requester | Requester mengisi rentang pengerjaan (tanggal mulai dan selesai) sesuai kebutuhan; sistem memeriksa ambang beban pada setiap hari dalam rentang |
+| PM | Requester | Requester mengisi rentang waktu per bulan; tiket berulang otomatis sesuai periode yang diinput; sistem memeriksa ambang beban pada setiap jadwal |
 
 `start_target_date` dan `end_target_date` berisi awal dan akhir rentang di atas. Untuk CM, nilainya diisi sistem saat penjadwalan.
 
@@ -576,7 +573,6 @@ Satu foto utama per kolom. Foto tambahan hanya dilampirkan bila ada.
 | reason | varchar | Alasan (Reject, Cancel, Pending, Eskalasi, Berhalangan), opsional |
 | timestamp | timestamp | DEFAULT CURRENT_TIMESTAMP |
 
-`actor_id` dan `actor_role` menggantikan `technician_id` pada FSD agar log juga mencakup aksi Requester, Approver, Supervisor, dan sistem.
 
 ### B.2 Daftar action_code
 
