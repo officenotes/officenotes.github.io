@@ -6,7 +6,7 @@ title: Overview
 
 # OfficeNotes: Engineering Clarity from Business Complexity
 
-Selamat datang di repositori dokumentasi dan studi kasus **Septian Narsa Putra** — **IT Business Analyst & Systems Analyst** dengan fokus pada rekayasa kebutuhan (*Requirement Engineering*), pemetaan proses bisnis (**BPMN 2.0**), serta perancangan arsitektur fungsional berbasis prinsip **Lean Six Sigma**.
+Selamat datang di repositori dokumentasi dan studi kasus **Septian Narsa Putra** — **IT Business Analyst & Systems Analyst** dengan fokus pada rekayasa kebutuhan (*Requirement Engineering*), pemetaan proses bisnis (**BPMN 2.0**), serta perancangan arsitektur fungsional berbasis prinsip **Lean**.
 
 Situs ini berfungsi sebagai ruang kerja terbuka (*living portfolio*) yang mendokumentasikan bagaimana masalah operasional yang ambigu diterjemahkan menjadi spesifikasi sistem yang presisi, terukur, dan siap dieksekusi oleh tim *engineering*.
 

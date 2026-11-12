@@ -8,7 +8,7 @@ const PILLARS = [
   {
     title: '01. Process & Lean Optimization',
     description:
-      'Membedah alur kerja As-Is menggunakan BPMN 2.0 dan prinsip Lean Six Sigma untuk memangkas bottleneck sebelum merancang solusi perangkat lunak.',
+      'Membedah alur kerja As-Is menggunakan BPMN 2.0 dan prinsip Lean untuk memangkas bottleneck sebelum merancang solusi perangkat lunak.',
   },
   {
     title: '02. Zero-Ambiguity Specifications',
