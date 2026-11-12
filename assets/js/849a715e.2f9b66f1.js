@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkofficenotes_github_io||=[]).push([[1947],{5209(e){e.exports=JSON.parse('{"metadata":{"permalink":"/articles","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Artikel praktis seputar Requirement Engineering, BPMN, dan System Analysis","blogTitle":"Business Analysis Notes & Playbooks"}}')}}]);

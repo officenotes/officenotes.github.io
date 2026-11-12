@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>OfficeNotes Blog</title>
+        <link>https://officenotes.github.io/articles</link>
+        <description>OfficeNotes Blog</description>
+        <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Coming Soon]]></title>
+            <link>https://officenotes.github.io/articles/welcome</link>
+            <guid>https://officenotes.github.io/articles/welcome</guid>
+            <pubDate>Thu, 26 Nov 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Konten sedang disiapkan. Silakan kembali lagi nanti.]]></description>
+            <content:encoded><![CDATA[<blockquote>
+<p>Konten sedang disiapkan. Silakan kembali lagi nanti.</p>
+</blockquote>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
