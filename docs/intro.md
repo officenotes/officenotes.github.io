@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /
-title: Overview & Metodologi Analisis
+title: Overview
 ---
 
 # OfficeNotes: Engineering Clarity from Business Complexity
