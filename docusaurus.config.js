@@ -64,7 +64,7 @@ const config = {
             position: 'left',
             label: 'Portofolio (BRD & FSD)',
           },
-          {to: '/articles', label: 'Materi Business Analyst', position: 'left'},
+          //{to: '/articles', label: 'Materi Business Analyst', position: 'left'},
           {
             href: 'https://github.com/officenotes',
             label: 'GitHub',
