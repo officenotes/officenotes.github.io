@@ -63,7 +63,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Portofolio (BRD & FSD)',
+            label: 'Portofolio',
           },
           //{to: '/articles', label: 'Materi Business Analyst', position: 'left'},
           {

@@ -65,7 +65,7 @@ function HomepageHeader() {
           </p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/portfolio">
-              Jelajahi Portofolio (BRD & FSD)
+              Jelajahi Portofolio
             </Link>
             <Link className="button button--secondary button--lg" to="/articles">
               Baca Materi Business Analyst
