@@ -9,11 +9,6 @@
 | Penyusun | @septian.narsa |
 | Status | Approved |
 
-**Keterangan penanda pada dokumen ini**
-
-- **[Keputusan]** : sudah diputuskan pada diskusi analisis.
-- **[Usulan]** : usulan penyusun, perlu divalidasi stakeholder.
-
 **Riwayat Revisi**
 
 | Versi | Tanggal | Perubahan |
@@ -199,9 +194,9 @@ flowchart TD
 
 ### 7.2 Model Beban Kerja
 
-Pengukuran beban memakai dua variabel yang sudah diputuskan: **jumlah tiket** dan **tingkat prioritas**. Skema pembobotan di bawah adalah **[Usulan]** dan perlu divalidasi.
+Pengukuran beban memakai dua variabel yang sudah diputuskan: **jumlah tiket** dan **tingkat prioritas**. 
 
-| Prioritas | Bobot Beban (usulan) |
+| Prioritas | Bobot Beban |
 |---|---|
 | Low | 1 |
 | Medium | 2 |
@@ -268,7 +263,7 @@ Pengukuran beban memakai dua variabel yang sudah diputuskan: **jumlah tiket** da
 
 ## 8. Kebutuhan Bisnis (Business Requirements)
 
-Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Prioritas di bawah adalah **[Usulan]**.
+Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't.
 
 ### 8.1 Modul Register Asset
 
