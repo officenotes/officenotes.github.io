@@ -54,14 +54,14 @@ function HomepageHeader() {
     <header className={styles.heroBanner}>
       <div className="container">
         <div className={styles.heroInner}>
-          <span className={styles.badge}>IT Business Analyst & Systems Architect</span>
+          <span className={styles.badge}>Business & Process Analyst</span>
           <h1 className={styles.heroTitle}>
-            Menerjemahkan Kompleksitas Bisnis Menjadi Spesifikasi Sistem yang Presisi.
+            Menerjemahkan Kompleksitas Bisnis Menjadi Spesifikasi Sistem yang Aplikatif.
           </h1>
           <p className={styles.heroSubtitle}>
             Dokumentasi terbuka oleh <strong>Septian Narsa Putra</strong>. Berisi kumpulan studi kasus
-            rekayasa kebutuhan (BRD & FSD), pemodelan proses BPMN 2.0, serta catatan praktis seputar
-            analisis sistem dan transformasi digital.
+            rekayasa kebutuhan, pemodelan proses BPMN 2.0, serta catatan praktis seputar
+            analisis proses  dan transformasi digital.
           </p>
           <div className={styles.buttons}>
             <Link className="button button--primary button--lg" to="/portfolio">
