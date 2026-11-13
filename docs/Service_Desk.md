@@ -1,13 +1,13 @@
 # Service Desk
-## BRD Service Desk — Ticketing, Register Asset, dan Penugasan Teknisi Otomatis
+## Ticketing, Register Asset, dan Penugasan Teknisi Otomatis
 
 | Atribut | Keterangan |
 |---|---|
 | Nama Dokumen | BRD Service Desk |
-| Versi | 0.2 (Draft) |
+| Versi | 1 |
 | Tanggal | 12 November 2026 |
 | Penyusun | @septian.narsa |
-| Status | Approved |
+| Status | Public |
 
 **Riwayat Revisi**
 
