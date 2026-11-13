@@ -56,7 +56,7 @@ function HomepageHeader() {
         <div className={styles.heroInner}>
           <span className={styles.badge}>Business & Process Analyst</span>
           <h1 className={styles.heroTitle}>
-            Menerjemahkan Kompleksitas Bisnis Menjadi Spesifikasi Sistem yang Aplikatif.
+            Menerjemahkan Kompleksitas Bisnis Menjadi Spesifikasi Sistem yang Aplikatif
           </h1>
           <p className={styles.heroSubtitle}>
             Dokumentasi terbuka berisi kumpulan studi kasus
