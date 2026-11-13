@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://officenotes.github.io/articles</id>
-    <title>OfficeNotes Blog</title>
+    <title>Studi Kasus Blog</title>
     <updated>2026-11-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://officenotes.github.io/articles"/>
-    <subtitle>OfficeNotes Blog</subtitle>
+    <subtitle>Studi Kasus Blog</subtitle>
     <icon>https://officenotes.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Coming Soon]]></title>
