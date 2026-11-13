@@ -9,14 +9,6 @@
 | Penyusun | @septian.narsa |
 | Status | Public |
 
-**Riwayat Revisi**
-
-| Versi | Tanggal | Perubahan |
-|---|---|---|
-| 0.1 | 12 Nov 2026 | Draft awal |
-| 0.2 | 12 Nov 2026 | Menerapkan hasil review: status tiket, aturan penugasan, template laporan, standar log aktivitas, penagihan di luar platform |
-
----
 
 ## 1. Ringkasan Eksekutif
 
