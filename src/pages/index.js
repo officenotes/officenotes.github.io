@@ -24,11 +24,11 @@ const PILLARS = [
 
 const CASE_STUDIES = [
   {
-    title: 'Enterprise Office Procurement System',
+    title: 'Service Desk',
     description:
-      'Transformasi alur pengadaan barang dan jasa—mencakup pemodelan BPMN 2.0, multi-vendor RFQ, aturan toleransi selisih pajak, Short Close PO, hingga pembatalan pasca-approval.',
-    tags: ['BPMN 2.0', 'BRD', 'FSD', 'Business Rules'],
-    link: '/portfolio',
+      'Transformasi proses manajemen tiket layanan TI, termasuk alur eskalasi, SLA, dan matriks Business Rules.',
+    tags: ['BRD', 'Business Rules', 'Digital Transformation'],
+    link: '/studikasus',
     linkLabel: 'Baca Spesifikasi & Alur →',
   },
   {
@@ -36,7 +36,7 @@ const CASE_STUDIES = [
     description:
       'Perancangan struktur gudang 5-level, pelacakan bin 3D, konversi multi-satuan (Multi-UoM), manajemen barcode, dan alur Quality Control penerimaan barang.',
     tags: ['Supply Chain', 'FSD', 'Data Model', 'Multi-UoM'],
-    link: '/portfolio',
+    link: '/studikasus',
     linkLabel: 'Lihat Arsitektur Sistem →',
   },
   {
@@ -44,7 +44,7 @@ const CASE_STUDIES = [
     description:
       'Spesifikasi arsitektur microservices untuk manajemen poin, tiering pelanggan, mesin aturan kampanye dinamis, dan BackOffice Command Center.',
     tags: ['Microservices', 'PRD', 'FSD', 'API Contract'],
-    link: '/portfolio',
+    link: '/studikasus',
     linkLabel: 'Eksplorasi Dokumen →',
   },
 ];
@@ -59,13 +59,13 @@ function HomepageHeader() {
             Menerjemahkan Kompleksitas Bisnis Menjadi Spesifikasi Sistem yang Aplikatif.
           </h1>
           <p className={styles.heroSubtitle}>
-            Dokumentasi terbuka oleh <strong>Septian Narsa Putra</strong>. Berisi kumpulan studi kasus
+            Dokumentasi terbuka berisi kumpulan studi kasus
             rekayasa kebutuhan, pemodelan proses BPMN 2.0, serta catatan praktis seputar
-            analisis proses  dan transformasi digital.
+            analisis proses dan transformasi digital.
           </p>
           <div className={styles.buttons}>
-            <Link className="button button--primary button--lg" to="/portfolio">
-              Jelajahi Portofolio
+            <Link className="button button--primary button--lg" to="/studikasus">
+              Jelajahi Studi Kasus
             </Link>
             <Link className="button button--secondary button--lg" to="/articles">
               Baca Materi Business Analyst
