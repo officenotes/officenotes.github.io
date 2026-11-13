@@ -1,36 +1,28 @@
 # Customer Loyalty
-## Customer Loyalty Program — Layanan Kereta MRT
+## Layanan Transportasi Publik
 
 | Atribut | Keterangan |
 |---|---|
-| Nama Dokumen | BRD Customer Loyalty Program MRT |
-| Versi | 0.1 (Draft) |
+| Nama Dokumen | BRD Customer Loyalty Apps |
+| Versi | 1 |
 | Tanggal | 12 November 2026 |
-| Penyusun | [Usulan] isi nama penyusun |
-| Sumber Acuan | Dokumen strategi "loyalty BRD" (strategi umum program loyalty untuk layanan MRT). Struktur mengikuti BRD_BeOne_Service_Desk.md |
-| Status | Draft untuk diskusi dan validasi stakeholder |
+| Penyusun | @septian.narsa |
+| Status | Study Case |
 
-**Keterangan penanda pada dokumen ini**
-
-- **[FSD]** : berasal dari dokumen spesifikasi fungsional. Belum tersedia untuk proyek ini.
-- **[Keputusan]** : sudah diputuskan pada diskusi analisis. Belum ada pada versi ini.
-- **[Usulan]** : usulan penyusun berdasarkan dokumen strategi sumber, perlu divalidasi stakeholder.
-
-Seluruh isi dokumen v0.1 bertanda **[Usulan]** karena sumber berupa strategi umum, bukan keputusan atau spesifikasi.
 
 **Riwayat Revisi**
 
 | Versi | Tanggal | Perubahan |
 |---|---|---|
-| 0.1 | 12 Nov 2026 | Draft awal dari dokumen strategi loyalty MRT |
+| 1 | 12 Nov 2026 | Dukumen pengembangan loyalty system |
 
 ---
 
 ## 2. Ringkasan Eksekutif
 
-Program loyalty ini dirancang untuk penumpang layanan kereta MRT. Program memberi penghargaan atas frekuensi perjalanan dan pemakaian pada jam sepi, lalu menukar poin dengan perjalanan gratis, diskon, atau penawaran mitra di stasiun. Program dijalankan melalui aplikasi dan terhubung dengan metode pembayaran nontunai.
+Program loyalty ini dirancang untuk penumpang layanan transportasi publik dalam hal ini MRT. Program memberi reward atas frekuensi setiap perjalanan, lalu menukar poin dengan perjalanan voucher yang tersedia atau penawaran mitra di tempat yang telah ditentukan oleh mitra. Program dijalankan melalui aplikasi dan terhubung dengan metode pembayaran nontunai.
 
-Program ditujukan untuk tiga hasil utama: menambah frekuensi penumpang reguler, menyeimbangkan beban penumpang antara jam sibuk dan jam sepi, dan meningkatkan pemakaian layanan mitra di stasiun. Cakupan fase awal, aturan poin, dan ambang tier masih **[Usulan]** dan perlu diputuskan sebelum pengembangan.
+Program ditujukan untuk tiga hasil utama: menambah frekuensi penumpang, memberikan benefit tambahan pada penumpang, dan meningkatkan pemakaian layanan mitra di stasiun. Cakupan fase awal, aturan poin, dan tier/leveling.
 
 ---
 
@@ -38,20 +30,17 @@ Program ditujukan untuk tiga hasil utama: menambah frekuensi penumpang reguler, 
 
 ### 3.1 Latar Belakang
 
-Layanan MRT melayani penumpang reguler (komuter), penumpang sesekali, dan turis. Kepadatan penumpang terjadi pada jam sibuk, sementara jam sepi belum termanfaatkan. Stasiun juga memiliki potensi trafik untuk mitra ritel dan F&B. **[Usulan]**
+Layanan transportasi publik melayani penumpang reguler, penumpang sesekali, dan turis. Kepadatan penumpang terjadi pada jam sibuk, sementara jam sepi belum termanfaatkan. Tempat seperti stasiun juga memiliki potensi trafik untuk mitra ritel dan F&B. Diharapkan penumpang, mitra seperti ritel dan F&B bisa mendapat benefit tambahan dari meningkatnya pengguna transportasi publik.
 
 ### 3.2 Permasalahan Kondisi Saat Ini
 
 | No | Permasalahan | Dampak Bisnis |
 |---|---|---|
 | P1 | Belum ada insentif bagi penumpang reguler untuk menambah frekuensi perjalanan | Peluang kenaikan ridership tidak tergarap |
-| P2 | Beban penumpang terkonsentrasi pada jam sibuk | Kepadatan tinggi pada jam sibuk, utilisasi jam sepi rendah |
-| P3 | Belum ada program apresiasi dan retensi penumpang | Loyalitas dan retensi penumpang sulit dibangun |
-| P4 | Mitra di stasiun belum memanfaatkan trafik penumpang secara terarah | Potensi pendapatan dari layanan pendukung belum optimal |
-| P5 | Data perjalanan penumpang belum dipakai untuk penawaran yang dipersonalisasi | Promosi kurang tepat sasaran |
-| P6 | Belum ada cara bergabung bagi penumpang tanpa smartphone atau turis | Sebagian penumpang tidak dapat ikut program |
-
-> Permasalahan P1 sampai P6 disusun dari dokumen strategi sumber **[Usulan]** dan perlu divalidasi dengan data operasional.
+| P2 | Belum ada program apresiasi dan retensi penumpang | Loyalitas dan retensi penumpang sulit dibangun |
+| P3 | Mitra di stasiun belum memanfaatkan trafik penumpang secara terarah | Potensi pendapatan dari layanan pendukung belum optimal |
+| P4 | Data perjalanan penumpang belum dipakai untuk penawaran yang dipersonalisasi | Promosi kurang tepat sasaran |
+| P5 | Belum ada cara bergabung bagi penumpang tanpa smartphone atau turis | Sebagian penumpang tidak dapat ikut program |
 
 ---
 
@@ -62,12 +51,10 @@ Layanan MRT melayani penumpang reguler (komuter), penumpang sesekali, dan turis.
 | ID | Tujuan |
 |---|---|
 | BO-01 | Meningkatkan frekuensi perjalanan penumpang reguler melalui insentif poin dan tier |
-| BO-02 | Mendorong perjalanan pada jam sepi untuk menyeimbangkan beban penumpang |
-| BO-03 | Meningkatkan kepuasan dan retensi penumpang melalui program apresiasi |
-| BO-04 | Meningkatkan pemakaian layanan mitra di stasiun |
-| BO-05 | Menyediakan dasar data untuk penawaran personal dan pemantauan program |
+| BO-02 | Meningkatkan kepuasan dan retensi penumpang melalui program apresiasi |
+| BO-03 | Meningkatkan pemakaian layanan mitra di stasiun |
+| BO-04 | Menyediakan dasar data untuk penawaran personal dan pemantauan program |
 
-Seluruh tujuan bersifat **[Usulan]**.
 
 ### 4.2 Indikator Keberhasilan (KPI)
 
@@ -88,28 +75,26 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 
 ### 5.1 Dalam Lingkup (In Scope)
 
-| No | Modul | Keterangan | Sumber |
-|---|---|---|---|
-| 1 | Keanggotaan | Pendaftaran dan profil anggota dalam aplikasi | [Usulan] |
-| 2 | Poin | Perolehan poin dari perjalanan dan isi ulang kartu | [Usulan] |
-| 3 | Tier | Tingkatan anggota (contoh: Silver, Gold, Platinum) | [Usulan] |
-| 4 | Penukaran | Tukar poin dengan perjalanan gratis, diskon, atau penawaran mitra | [Usulan] |
-| 5 | Off-peak | Bonus poin atau diskon untuk perjalanan jam sepi | [Usulan] |
-| 6 | Promosi mitra | Penawaran dari mitra ritel dan F&B di stasiun | [Usulan] |
-| 7 | Referral | Insentif untuk pengajakan anggota baru | [Usulan] |
-| 8 | Umpan balik | Survei dan masukan dari anggota | [Usulan] |
-| 9 | Pelaporan | Dashboard performa program | [Usulan] |
+| No | Modul | Keterangan |
+|---|---|---|
+| 1 | Keanggotaan | Pendaftaran dan profil anggota dalam aplikasi |
+| 2 | Poin | Perolehan poin dari perjalanan dan isi ulang kartu |
+| 3 | Tier | Tingkatan anggota (contoh: Silver, Gold, Platinum) |
+| 4 | Penukaran | Tukar poin dengan perjalanan gratis, diskon, atau penawaran mitra |
+| 5 | Off-peak | Bonus poin atau diskon untuk perjalanan jam sepi |
+| 6 | Promosi mitra | Penawaran dari mitra ritel dan F&B di stasiun |
+| 7 | Referral | Insentif untuk pengajakan anggota baru |
+| 8 | Umpan balik | Survei dan masukan dari anggota |
+| 9 | Pelaporan | Dashboard performa program |
 
 ### 5.2 Di Luar Lingkup (Out of Scope)
 
 | Item | Catatan |
 |---|---|
-| Integrasi lintas moda (bus, ferry) | Usulan fase lanjutan **[Usulan]** |
-| Kemitraan sepeda dan e-scooter | Usulan fase lanjutan **[Usulan]** |
+| Integrasi lintas moda (bus, komuter line, MRT) | Usulan fase lanjutan **[Usulan]** |
+| Kemitraan transportasi online | Usulan fase lanjutan **[Usulan]** |
 | Cashback | Belum disebut sebagai kebutuhan **[Usulan]** |
 | Donasi dan kegiatan komunitas berbasis poin | Usulan fase lanjutan **[Usulan]** |
-| Prediksi operasional jadwal kereta | Di luar program loyalty, perlu proyek terpisah **[Usulan]** |
-| Sistem pembayaran dan tiket | Dianggap sudah ada dan menjadi dependensi **[Usulan]** |
 
 ---
 
@@ -119,15 +104,13 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 |---|---|---|
 | Penumpang Reguler | Pengguna | Mengumpulkan poin dan menukar hadiah |
 | Penumpang Sesekali / Turis | Pengguna | Bergabung dan menukar poin tanpa keharusan memakai smartphone |
-| Operator MRT | Internal | Pemilik program dan pengambil keputusan aturan |
+| Operator Transportasi MRT | Internal | Pemilik program dan pengambil keputusan aturan |
 | Tim Pemasaran | Internal | Kampanye dan komunikasi program |
 | Tim Operasional Stasiun | Internal | Pendampingan penumpang dan layanan di stasiun |
 | Tim IT dan Data | Internal | Integrasi sistem dan analitik |
 | Mitra (ritel, F&B) | Eksternal | Penyedia penawaran penukaran poin |
 | Penyedia pembayaran | Eksternal | Pembacaan tap dan pencatatan transaksi |
 | Sistem Loyalty | Sistem | Perhitungan poin, tier, dan penukaran |
-
-> Peran ini **[Usulan]** dan perlu dikonfirmasi pada diskusi awal.
 
 ---
 
@@ -182,57 +165,56 @@ flowchart TD
 
 ## 8. Aturan Bisnis (Business Rules)
 
-Seluruh aturan bersifat **[Usulan]**. Nilai numerik belum ditetapkan dan ditandai sebagai placeholder.
 
 ### 8.1 Aturan Poin
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-PT-01 | Poin diberikan untuk setiap perjalanan dan isi ulang kartu | [Usulan] |
-| BR-PT-02 | Nilai poin per perjalanan ditetapkan oleh Operator MRT | [Usulan] |
-| BR-PT-03 | Perjalanan pada jam sepi mendapat bonus poin dengan persentase yang ditetapkan Operator MRT | [Usulan] |
-| BR-PT-04 | Poin memiliki masa berlaku yang ditetapkan Operator MRT | [Usulan] |
-| BR-PT-05 | Poin yang kedaluwarsa tidak dapat ditukar | [Usulan] |
-| BR-PT-06 | Setiap perubahan saldo poin dicatat dalam riwayat transaksi | [Usulan] |
+| ID | Aturan |
+|---|---|
+| BR-PT-01 | Poin diberikan untuk setiap perjalanan atau sesuai rules yang dikonfigurasi pada sistem |
+| BR-PT-02 | Nilai poin per perjalanan ditetapkan oleh Operator MRT |
+| BR-PT-03 | Perjalanan pada jam sepi mendapat bonus poin dengan persentase yang ditetapkan Operator MRT |
+| BR-PT-04 | Poin memiliki masa berlaku yang ditetapkan Operator MRT |
+| BR-PT-05 | Poin yang kedaluwarsa tidak dapat ditukar dan akan hangus |
+| BR-PT-06 | Setiap perubahan saldo poin dicatat dalam riwayat transaksi |
 
 ### 8.2 Aturan Tier
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-TR-01 | Tier ditentukan oleh frekuensi perjalanan dan/atau nilai belanja dalam periode tertentu | [Usulan] |
-| BR-TR-02 | Ambang setiap tier ditetapkan Operator MRT | [Usulan] |
-| BR-TR-03 | Tier yang lebih tinggi memberi manfaat tambahan (poin lebih besar, diskon, atau layanan khusus) | [Usulan] |
-| BR-TR-04 | Tier dievaluasi ulang secara berkala | [Usulan] |
+| ID | Aturan |
+|---|---|
+| BR-TR-01 | Tier ditentukan oleh frekuensi perjalanan dan/atau nilai belanja dalam periode tertentu |
+| BR-TR-02 | Ambang setiap tier ditetapkan Operator MRT |
+| BR-TR-03 | Tier yang lebih tinggi memberi manfaat tambahan (poin lebih besar, diskon, atau layanan khusus) |
+| BR-TR-04 | Tier dievaluasi ulang secara berkala |
 
 ### 8.3 Aturan Penukaran
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-RD-01 | Poin dapat ditukar dengan perjalanan gratis, diskon, atau penawaran mitra | [Usulan] |
-| BR-RD-02 | Nilai tukar poin ditetapkan Operator MRT | [Usulan] |
-| BR-RD-03 | Penukaran yang gagal mengembalikan poin ke saldo anggota | [Usulan] |
-| BR-RD-04 | Penukaran dapat dibatalkan sesuai ketentuan yang ditetapkan | [Usulan] |
+| ID | Aturan |
+|---|---|
+| BR-RD-01 | Poin dapat ditukar dengan voucher, diskon, atau penawaran mitra tergantung program yang sedang berjalan |
+| BR-RD-02 | Nilai tukar poin ditetapkan Operator Transportasi |
+| BR-RD-03 | Penukaran yang gagal mengembalikan poin ke saldo anggota |
+| BR-RD-04 | Penukaran dapat dibatalkan sesuai ketentuan yang ditetapkan |
 
 ### 8.4 Aturan Promosi dan Mitra
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-PM-01 | Mitra hanya dapat menawarkan promosi setelah kerja sama disepakati | [Usulan] |
-| BR-PM-02 | Penawaran mitra dapat dibatasi berdasarkan stasiun, waktu, atau tier | [Usulan] |
-| BR-PM-03 | Setiap penukaran di mitra tercatat sebagai transaksi | [Usulan] |
+| ID | Aturan |
+|---|---|
+| BR-PM-01 | Mitra hanya dapat menawarkan promosi setelah kerja sama disepakati |
+| BR-PM-02 | Penawaran mitra dapat dibatasi berdasarkan waktu atau tier |
+| BR-PM-03 | Setiap penukaran di mitra tercatat sebagai transaksi |
 
 ### 8.5 Aturan Referral
 
-| ID | Aturan | Sumber |
-|---|---|---|
-| BR-RF-01 | Pengajak dan yang diajak mendapat imbalan setelah pendaftaran berhasil | [Usulan] |
-| BR-RF-02 | Imbalan referral dibatasi jumlahnya per anggota | [Usulan] |
+| ID | Aturan |
+|---|---|
+| BR-RF-01 | Pengajak dan yang diajak mendapat imbalan setelah pendaftaran berhasil |
+| BR-RF-02 | Imbalan referral dibatasi jumlahnya per anggota |
 
 ---
 
 ## 9. Kebutuhan Bisnis (Business Requirements)
 
-Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Seluruh prioritas bersifat **[Usulan]**.
+Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Seluruh prioritas bersifat.
 
 ### 9.1 Modul Keanggotaan
 
@@ -314,8 +296,8 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 |---|---|---|
 | Terdaftar | Anggota baru, belum aktif | Pendaftaran berhasil |
 | Aktif | Anggota dapat mengumpulkan dan menukar poin | Verifikasi selesai |
-| Nonaktif | Anggota tidak dapat mengumpulkan poin | Tidak aktif sesuai aturan **[Usulan]** |
-| Diblokir | Akses dihentikan | Pelanggaran atau permintaan anggota **[Usulan]** |
+| Nonaktif | Anggota tidak dapat mengumpulkan poin | Tidak aktif sesuai aturan |
+| Diblokir | Akses dihentikan | Pelanggaran atau permintaan anggota |
 
 ### 10.2 Status Penukaran
 
@@ -394,27 +376,23 @@ stateDiagram-v2
 
 ### 11.3 Ketetapan Data
 
-- Data pribadi anggota dikelola sesuai regulasi perlindungan data pribadi yang berlaku **[Usulan]**.
-- Saldo poin hanya berubah melalui entri pada Point Ledger **[Usulan]**.
-- Sumber data perjalanan berasal dari sistem pembayaran atau tiket **[Usulan]** dan perlu dikonfirmasi.
+- Data pribadi anggota dikelola sesuai regulasi perlindungan data pribadi yang berlaku.
+- Saldo poin hanya berubah melalui entri pada Point Ledger.
+- Sumber data perjalanan berasal dari sistem pembayaran atau tiket.
 
 ---
 
 ## 12. Kebutuhan Non-Fungsional
 
-Seluruh angka bersifat **[Usulan]** dan perlu divalidasi.
-
 | ID | Kategori | Kebutuhan |
 |---|---|---|
-| NFR-01 | Kinerja | Poin diperbarui setelah perjalanan dalam waktu yang disepakati **[Usulan]** |
-| NFR-02 | Ketersediaan | Layanan tersedia selama jam operasional MRT dan memiliki target uptime yang ditetapkan saat perancangan teknis **[Usulan]** |
-| NFR-03 | Keamanan | Akses berbasis peran untuk anggota, mitra, dan admin **[Usulan]** |
-| NFR-04 | Keamanan | Data anggota dan transaksi terenkripsi saat disimpan dan dikirim **[Usulan]** |
-| NFR-05 | Auditabilitas | Setiap perubahan poin dan tier tercatat dengan waktu dan pelaku **[Usulan]** |
-| NFR-06 | Kompatibilitas | Aplikasi mobile (Android dan iOS) dan web browser modern **[Usulan]** |
-| NFR-07 | Skalabilitas | Mendukung lonjakan penggunaan pada jam sibuk dan hari besar **[Usulan]** |
-| NFR-08 | Aksesibilitas | Dapat digunakan penumpang tanpa smartphone melalui kartu atau metode lain **[Usulan]** |
-| NFR-09 | Retensi data | Riwayat transaksi disimpan sesuai kebijakan perusahaan **[Usulan]** |
+| NFR-01 | Kinerja | Poin diperbarui setelah perjalanan dalam waktu yang disepakati |
+| NFR-02 | Ketersediaan | Layanan tersedia selama jam operasional dan memiliki target uptime yang ditetapkan saat perancangan teknis |
+| NFR-03 | Keamanan | Akses berbasis peran untuk anggota, mitra, dan admin |
+| NFR-04 | Auditabilitas | Setiap perubahan poin dan tier tercatat dengan waktu dan pelaku |
+| NFR-05 | Kompatibilitas | Aplikasi mobile (Android dan iOS) dan web browser modern |
+| NFR-06 | Skalabilitas | Mendukung lonjakan penggunaan pada jam sibuk dan hari besar |
+| NFR-07 | Retensi data | Riwayat transaksi disimpan sesuai kebijakan perusahaan |
 
 ---
 
@@ -422,15 +400,15 @@ Seluruh angka bersifat **[Usulan]** dan perlu divalidasi.
 
 ### 13.1 Asumsi
 
-1. Sistem pembayaran atau tiket sudah ada dan dapat memberi data perjalanan **[Usulan]**.
-2. Operator MRT memiliki wewenang menetapkan aturan poin, tier, dan penukaran **[Usulan]**.
-3. Mitra di stasiun bersedia menjadi penyedia penawaran **[Usulan]**.
-4. Penumpang dapat memakai aplikasi atau kartu untuk bergabung **[Usulan]**.
+1. Sistem pembayaran atau tiket sudah ada dan dapat memberi data perjalanan.
+2. Operator Transportasi memiliki wewenang menetapkan aturan poin, tier, dan penukaran.
+3. Mitra di stasiun bersedia menjadi penyedia penawaran.
+4. Penumpang hanya dapat menggunakan aplikasi untuk bergabung.
 
 ### 13.2 Batasan
 
 1. Nilai poin, ambang tier, dan nilai tukar belum ditetapkan.
-2. Integrasi lintas moda berada di luar fase awal **[Usulan]**.
+2. Integrasi lintas moda berada di luar fase awal.
 3. Dokumen ini berdasarkan strategi umum, bukan spesifikasi teknis.
 
 ### 13.3 Dependensi
@@ -488,14 +466,6 @@ Belum ada user story untuk proyek ini. Traceability dibuat dari tujuan bisnis ke
 | Referral | Pengajakan anggota baru |
 | Ledger | Riwayat perubahan saldo poin |
 
-### 16.2 Langkah Selanjutnya
-
-1. Tetapkan cakupan fase awal dan modul yang ditunda.
-2. Tetapkan aturan poin, ambang tier, dan nilai tukar.
-3. Tetapkan sumber data perjalanan dan sistem yang terlibat.
-4. Tetapkan mitra awal dan jenis penawarannya.
-5. Tetapkan target KPI setelah baseline data tersedia.
-6. Review BRD bersama stakeholder dan perbarui ke versi 0.2.
 
 ---
 
