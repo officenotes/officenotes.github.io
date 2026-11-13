@@ -1,6 +1,7 @@
 # Customer Loyalty
 ## Layanan Transportasi Publik
 
+## Informasi Dokumen
 | Atribut | Keterangan |
 |---|---|
 | Nama Dokumen | BRD Customer Loyalty Apps |
@@ -10,11 +11,6 @@
 | Status | Public |
 
 
-**Riwayat Revisi**
-
-| Versi | Tanggal | Perubahan |
-|---|---|---|
-| 1 | 12 Nov 2026 | Dukumen pengembangan loyalty system |
 
 ---
 
