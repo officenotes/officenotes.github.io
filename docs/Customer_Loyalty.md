@@ -18,7 +18,7 @@
 
 ---
 
-## 2. Ringkasan Eksekutif
+## Ringkasan Eksekutif
 
 Program loyalty ini dirancang untuk penumpang layanan transportasi publik dalam hal ini MRT. Program memberi reward atas frekuensi setiap perjalanan, lalu menukar poin dengan perjalanan voucher yang tersedia atau penawaran mitra di tempat yang telah ditentukan oleh mitra. Program dijalankan melalui aplikasi dan terhubung dengan metode pembayaran nontunai.
 
@@ -26,13 +26,13 @@ Program ditujukan untuk tiga hasil utama: menambah frekuensi penumpang, memberik
 
 ---
 
-## 3. Latar Belakang dan Permasalahan
+## Latar Belakang dan Permasalahan
 
-### 3.1 Latar Belakang
+### Latar Belakang
 
 Layanan transportasi publik melayani penumpang reguler, penumpang sesekali, dan turis. Kepadatan penumpang terjadi pada jam sibuk, sementara jam sepi belum termanfaatkan. Tempat seperti stasiun juga memiliki potensi trafik untuk mitra ritel dan F&B. Diharapkan penumpang, mitra seperti ritel dan F&B bisa mendapat benefit tambahan dari meningkatnya pengguna transportasi publik.
 
-### 3.2 Permasalahan Kondisi Saat Ini
+### Permasalahan Kondisi Saat Ini
 
 | No | Permasalahan | Dampak Bisnis |
 |---|---|---|
@@ -44,9 +44,9 @@ Layanan transportasi publik melayani penumpang reguler, penumpang sesekali, dan 
 
 ---
 
-## 4. Tujuan Bisnis dan Indikator Keberhasilan
+## Tujuan Bisnis dan Indikator Keberhasilan
 
-### 4.1 Tujuan Bisnis
+### Tujuan Bisnis
 
 | ID | Tujuan |
 |---|---|
@@ -56,7 +56,7 @@ Layanan transportasi publik melayani penumpang reguler, penumpang sesekali, dan 
 | BO-04 | Menyediakan dasar data untuk penawaran personal dan pemantauan program |
 
 
-### 4.2 Indikator Keberhasilan (KPI)
+### Indikator Keberhasilan (KPI)
 
 Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 
@@ -71,9 +71,9 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 
 ---
 
-## 5. Ruang Lingkup
+## Ruang Lingkup
 
-### 5.1 Dalam Lingkup (In Scope)
+### Dalam Lingkup (In Scope)
 
 | No | Modul | Keterangan |
 |---|---|---|
@@ -87,7 +87,7 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 | 8 | Umpan balik | Survei dan masukan dari anggota |
 | 9 | Pelaporan | Dashboard performa program |
 
-### 5.2 Di Luar Lingkup (Out of Scope)
+### Di Luar Lingkup (Out of Scope)
 
 | Item | Catatan |
 |---|---|
@@ -98,7 +98,7 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 
 ---
 
-## 6. Stakeholder dan Aktor
+## Stakeholder dan Aktor
 
 | Aktor | Organisasi | Peran |
 |---|---|---|
@@ -114,9 +114,9 @@ Target angka belum ditetapkan. Target ditentukan setelah baseline data tersedia.
 
 ---
 
-## 7. Proses Bisnis
+## Proses Bisnis
 
-### 7.1 Proses As-Is
+### Proses As-Is
 
 ```mermaid
 flowchart TD
@@ -131,7 +131,7 @@ flowchart TD
 | 2 | Penumpang | Naik kereta |
 | 3 | Sistem | Mencatat perjalanan tanpa imbalan |
 
-### 7.2 Proses To-Be
+### Proses To-Be
 
 ```mermaid
 flowchart TD
@@ -150,7 +150,7 @@ flowchart TD
     J --> L[Notifikasi ke penumpang]
 ```
 
-### 7.3 Perbandingan As-Is dan To-Be
+### Perbandingan As-Is dan To-Be
 
 | Aspek | As-Is | To-Be |
 |---|---|---|
@@ -163,10 +163,10 @@ flowchart TD
 
 ---
 
-## 8. Aturan Bisnis (Business Rules)
+## Aturan Bisnis (Business Rules)
 
 
-### 8.1 Aturan Poin
+### Aturan Poin
 
 | ID | Aturan |
 |---|---|
@@ -177,7 +177,7 @@ flowchart TD
 | BR-PT-05 | Poin yang kedaluwarsa tidak dapat ditukar dan akan hangus |
 | BR-PT-06 | Setiap perubahan saldo poin dicatat dalam riwayat transaksi |
 
-### 8.2 Aturan Tier
+### Aturan Tier
 
 | ID | Aturan |
 |---|---|
@@ -186,7 +186,7 @@ flowchart TD
 | BR-TR-03 | Tier yang lebih tinggi memberi manfaat tambahan (poin lebih besar, diskon, atau layanan khusus) |
 | BR-TR-04 | Tier dievaluasi ulang secara berkala |
 
-### 8.3 Aturan Penukaran
+### Aturan Penukaran
 
 | ID | Aturan |
 |---|---|
@@ -195,7 +195,7 @@ flowchart TD
 | BR-RD-03 | Penukaran yang gagal mengembalikan poin ke saldo anggota |
 | BR-RD-04 | Penukaran dapat dibatalkan sesuai ketentuan yang ditetapkan |
 
-### 8.4 Aturan Promosi dan Mitra
+### Aturan Promosi dan Mitra
 
 | ID | Aturan |
 |---|---|
@@ -203,7 +203,7 @@ flowchart TD
 | BR-PM-02 | Penawaran mitra dapat dibatasi berdasarkan waktu atau tier |
 | BR-PM-03 | Setiap penukaran di mitra tercatat sebagai transaksi |
 
-### 8.5 Aturan Referral
+### Aturan Referral
 
 | ID | Aturan |
 |---|---|
@@ -212,11 +212,11 @@ flowchart TD
 
 ---
 
-## 9. Kebutuhan Bisnis (Business Requirements)
+## Kebutuhan Bisnis (Business Requirements)
 
 Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Seluruh prioritas bersifat.
 
-### 9.1 Modul Keanggotaan
+### Modul Keanggotaan
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -224,7 +224,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | REQ-MB-02 | Penumpang dapat bergabung melalui cara alternatif tanpa smartphone | Penumpang sesekali, Turis | S |
 | REQ-MB-03 | Anggota dapat melihat profil, saldo poin, dan tier | Anggota | M |
 
-### 9.2 Modul Poin
+### Modul Poin
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -233,7 +233,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | REQ-PT-03 | Sistem mencatat riwayat transaksi poin | Sistem | M |
 | REQ-PT-04 | Sistem menangani masa berlaku dan kedaluwarsa poin | Sistem | S |
 
-### 9.3 Modul Tier
+### Modul Tier
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -241,7 +241,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | REQ-TR-02 | Sistem menerapkan manfaat sesuai tier | Sistem | M |
 | REQ-TR-03 | Operator MRT dapat mengubah ambang dan manfaat tier | Admin Operator | M |
 
-### 9.4 Modul Penukaran
+### Modul Penukaran
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -250,28 +250,28 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | REQ-RD-03 | Sistem mengembalikan poin jika penukaran gagal | Sistem | M |
 | REQ-RD-04 | Anggota menerima notifikasi status penukaran | Anggota | S |
 
-### 9.5 Modul Off-Peak dan Gamifikasi
+### Modul Off-Peak dan Gamifikasi
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
 | REQ-OP-01 | Sistem menampilkan informasi jam sepi dan bonus yang berlaku | Anggota | S |
 | REQ-OP-02 | Operator MRT dapat membuat tantangan dengan imbalan untuk perjalanan pada waktu atau stasiun tertentu | Admin Operator | C |
 
-### 9.6 Modul Promosi Mitra
+### Modul Promosi Mitra
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
 | REQ-PM-01 | Mitra dapat mengelola penawaran di stasiun yang disepakati | Mitra | S |
 | REQ-PM-02 | Sistem menampilkan penawaran sesuai stasiun, waktu, dan tier | Sistem | S |
 
-### 9.7 Modul Referral
+### Modul Referral
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
 | REQ-RF-01 | Anggota dapat mengajak orang lain bergabung | Anggota | C |
 | REQ-RF-02 | Sistem memberi imbalan referral sesuai aturan | Sistem | C |
 
-### 9.8 Modul Umpan Balik, Pelaporan, dan Analitik
+### Modul Umpan Balik, Pelaporan, dan Analitik
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -279,7 +279,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | REQ-RP-01 | Sistem menyediakan dashboard performa program (ridership, jam sepi, penukaran, kepuasan) | Admin Operator | M |
 | REQ-RP-02 | Sistem menyediakan data segmentasi anggota untuk penawaran personal | Tim Pemasaran | S |
 
-### 9.9 Modul Aksesibilitas
+### Modul Aksesibilitas
 
 | ID | Kebutuhan | Aktor | Prioritas |
 |---|---|---|---|
@@ -288,9 +288,9 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 
 ---
 
-## 10. Siklus Status
+## Siklus Status
 
-### 10.1 Status Anggota
+### Status Anggota
 
 | Status | Arti | Pemicu |
 |---|---|---|
@@ -299,7 +299,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | Nonaktif | Anggota tidak dapat mengumpulkan poin | Tidak aktif sesuai aturan |
 | Diblokir | Akses dihentikan | Pelanggaran atau permintaan anggota |
 
-### 10.2 Status Penukaran
+### Status Penukaran
 
 | Status | Arti | Pemicu |
 |---|---|---|
@@ -308,7 +308,7 @@ Prioritas memakai skala MoSCoW: **M**ust, **S**hould, **C**ould, **W**on't. Selu
 | Gagal | Penukaran tidak berhasil | Kesalahan sistem atau validasi |
 | Dibatalkan | Penukaran dibatalkan | Anggota atau sistem membatalkan |
 
-### 10.3 Diagram Transisi Penukaran
+### Diagram Transisi Penukaran
 
 ```mermaid
 stateDiagram-v2
@@ -323,9 +323,9 @@ stateDiagram-v2
 
 ---
 
-## 11. Kebutuhan Data
+## Kebutuhan Data
 
-### 11.1 Entitas Utama
+### Entitas Utama
 
 | Entitas | Keterangan |
 |---|---|
@@ -339,42 +339,8 @@ stateDiagram-v2
 | Referral | Data pengajakan anggota baru |
 | Feedback | Data survei dan masukan |
 
-### 11.2 Struktur Tabel Usulan
 
-**Member** [Usulan]
-
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| member_id | integer | PRIMARY KEY |
-| card_id | varchar | Referensi kartu atau metode pembayaran |
-| status | varchar | Terdaftar, Aktif, Nonaktif, Diblokir |
-| tier_id | integer | FOREIGN KEY ke Tier |
-| created_at | timestamp | DEFAULT CURRENT_TIMESTAMP |
-
-**Point Ledger** [Usulan]
-
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| ledger_id | integer | PRIMARY KEY |
-| member_id | integer | FOREIGN KEY ke Member |
-| trip_id | integer | FOREIGN KEY ke Trip, opsional |
-| txn_code | varchar | NOT NULL, mengikuti Lampiran A |
-| points | integer | NOT NULL, nilai positif atau negatif |
-| expired_at | timestamp | Tanggal kedaluwarsa poin |
-| created_at | timestamp | DEFAULT CURRENT_TIMESTAMP |
-
-**Redemption** [Usulan]
-
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| redemption_id | integer | PRIMARY KEY |
-| member_id | integer | FOREIGN KEY ke Member |
-| reward_id | integer | FOREIGN KEY ke Reward |
-| points_used | integer | NOT NULL |
-| status | varchar | Diajukan, Berhasil, Gagal, Dibatalkan |
-| created_at | timestamp | DEFAULT CURRENT_TIMESTAMP |
-
-### 11.3 Ketetapan Data
+### Ketetapan Data
 
 - Data pribadi anggota dikelola sesuai regulasi perlindungan data pribadi yang berlaku.
 - Saldo poin hanya berubah melalui entri pada Point Ledger.
@@ -382,7 +348,7 @@ stateDiagram-v2
 
 ---
 
-## 12. Kebutuhan Non-Fungsional
+## Kebutuhan Non-Fungsional
 
 | ID | Kategori | Kebutuhan |
 |---|---|---|
@@ -396,22 +362,22 @@ stateDiagram-v2
 
 ---
 
-## 13. Asumsi, Batasan, dan Dependensi
+## Asumsi, Batasan, dan Dependensi
 
-### 13.1 Asumsi
+### Asumsi
 
 1. Sistem pembayaran atau tiket sudah ada dan dapat memberi data perjalanan.
 2. Operator Transportasi memiliki wewenang menetapkan aturan poin, tier, dan penukaran.
 3. Mitra di stasiun bersedia menjadi penyedia penawaran.
 4. Penumpang hanya dapat menggunakan aplikasi untuk bergabung.
 
-### 13.2 Batasan
+### Batasan
 
 1. Nilai poin, ambang tier, dan nilai tukar belum ditetapkan.
 2. Integrasi lintas moda berada di luar fase awal.
 3. Dokumen ini berdasarkan strategi umum, bukan spesifikasi teknis.
 
-### 13.3 Dependensi
+### Dependensi
 
 | Dependensi | Keterangan |
 |---|---|
@@ -423,7 +389,7 @@ stateDiagram-v2
 
 ---
 
-## 14. Risiko dan Mitigasi
+## Risiko dan Mitigasi
 
 | ID | Risiko | Dampak | Mitigasi |
 |---|---|---|---|
@@ -437,7 +403,7 @@ stateDiagram-v2
 
 ---
 
-## 15. Traceability: Tujuan ke Kebutuhan
+## Traceability: Tujuan ke Kebutuhan
 
 Belum ada user story untuk proyek ini. Traceability dibuat dari tujuan bisnis ke kebutuhan.
 
@@ -451,9 +417,9 @@ Belum ada user story untuk proyek ini. Traceability dibuat dari tujuan bisnis ke
 
 ---
 
-## 16. Glosarium dan Langkah Selanjutnya
+## Glosarium dan Langkah Selanjutnya
 
-### 16.1 Glosarium
+### Glosarium
 
 | Istilah | Arti |
 |---|---|
@@ -469,7 +435,7 @@ Belum ada user story untuk proyek ini. Traceability dibuat dari tujuan bisnis ke
 
 ---
 
-## 17. Lampiran
+## Lampiran
 
 ### Lampiran A. Kode Transaksi Poin [Usulan]
 
