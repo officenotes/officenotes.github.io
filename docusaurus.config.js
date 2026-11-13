@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'OfficeNotes',
+  title: 'Studi Kasus',
   tagline: 'IT Business Analysis Portfolio, System Specifications & Frameworks',
   favicon: 'img/favicon.ico',
 
@@ -37,7 +37,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: 'portfolio', // Mengubah URL /docs menjadi /portfolio
+          routeBasePath: 'studikasus', // Mengubah URL /docs menjadi /portfolio
           sidebarPath: './sidebars.js',
         },
         blog: {
@@ -57,13 +57,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'OfficeNotes',
+        title: 'Home',
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Portofolio',
+            label: 'Studi Kasus',
           },
           //{to: '/articles', label: 'Materi Business Analyst', position: 'left'},
           {
