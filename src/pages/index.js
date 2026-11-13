@@ -26,27 +26,27 @@ const CASE_STUDIES = [
   {
     title: 'Service Desk',
     description:
-      'Transformasi proses manajemen tiket layanan TI, termasuk alur eskalasi, SLA, dan matriks Business Rules.',
+      'Transformasi proses manajemen tiket layanan TI, termasuk alur eskalasi, SLA, dan Business Rules.',
     tags: ['BRD', 'Business Rules', 'Digital Transformation'],
-    link: '/studikasus',
+    link: '/studikasus/Service_Desk',
     linkLabel: 'Baca Spesifikasi & Alur →',
   },
-  {
-    title: 'Warehouse Management System (WMS)',
-    description:
-      'Perancangan struktur gudang 5-level, pelacakan bin 3D, konversi multi-satuan (Multi-UoM), manajemen barcode, dan alur Quality Control penerimaan barang.',
-    tags: ['Supply Chain', 'FSD', 'Data Model', 'Multi-UoM'],
-    link: '/studikasus',
-    linkLabel: 'Lihat Arsitektur Sistem →',
-  },
-  {
-    title: 'Enterprise Customer Loyalty Platform',
-    description:
-      'Spesifikasi arsitektur microservices untuk manajemen poin, tiering pelanggan, mesin aturan kampanye dinamis, dan BackOffice Command Center.',
-    tags: ['Microservices', 'PRD', 'FSD', 'API Contract'],
-    link: '/studikasus',
-    linkLabel: 'Eksplorasi Dokumen →',
-  },
+  // {
+  //   title: 'Warehouse Management System (WMS)',
+  //   description:
+  //     'Perancangan struktur gudang 5-level, pelacakan bin 3D, konversi multi-satuan (Multi-UoM), manajemen barcode, dan alur Quality Control penerimaan barang.',
+  //   tags: ['Supply Chain', 'FSD', 'Data Model', 'Multi-UoM'],
+  //   link: '/studikasus',
+  //   linkLabel: 'Lihat Arsitektur Sistem →',
+  // },
+  // {
+  //   title: 'Enterprise Customer Loyalty Platform',
+  //   description:
+  //     'Spesifikasi arsitektur microservices untuk manajemen poin, tiering pelanggan, mesin aturan kampanye dinamis, dan BackOffice Command Center.',
+  //   tags: ['Microservices', 'PRD', 'FSD', 'API Contract'],
+  //   link: '/studikasus',
+  //   linkLabel: 'Eksplorasi Dokumen →',
+  // },
 ];
 
 function HomepageHeader() {
