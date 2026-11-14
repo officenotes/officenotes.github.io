@@ -78,12 +78,12 @@ Presensi karyawan dicatat oleh mesin face recognition, sedangkan pengolahan data
 
 | Item | Catatan |
 |---|---|
-| Sinkronisasi dua arah (ERP ke mesin) | Arah data hanya dari mesin ke ERP **[Usulan]** |
-| Sinkronisasi data master karyawan | Hanya log presensi yang disinkronkan **[Usulan]** |
-| Sinkronisasi jadwal shift, cuti, dan izin | Tidak termasuk dalam lingkup **[Usulan]** |
-| Perhitungan terlambat, lembur, dan absen | Dilakukan oleh ERP setelah data masuk **[Usulan]** |
-| Pengelolaan enrolment wajah | Di luar lingkup service **[Usulan]** |
-| Dashboard pemantauan visual | Pemantauan melalui log **[Usulan]** |
+| Sinkronisasi dua arah (ERP ke mesin) | Arah data hanya dari mesin ke ERP |
+| Sinkronisasi data master karyawan | Hanya log presensi yang disinkronkan |
+| Sinkronisasi jadwal shift, cuti, dan izin | Tidak termasuk dalam lingkup |
+| Perhitungan terlambat, lembur, dan absen | Dilakukan oleh ERP setelah data masuk |
+| Pengelolaan enrolment wajah | Di luar lingkup service |
+| Dashboard pemantauan visual | Pemantauan melalui log |
 
 ---
 
