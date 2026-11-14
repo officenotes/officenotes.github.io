@@ -55,13 +55,9 @@ Presensi karyawan dicatat oleh mesin face recognition, sedangkan pengolahan data
 
 ### 4.2 Indikator Keberhasilan (KPI)
 
-| KPI | Definisi | Target |
-|---|---|---|
-| Keterlambatan sinkronisasi | Selisih waktu antara presensi di mesin dan kemunculannya di ERP | Tidak melebihi interval yang diatur **[Usulan]** |
-| Tingkat keberhasilan sinkronisasi | Persentase run sinkronisasi yang berhasil tanpa kegagalan akhir | [Usulan] ditetapkan saat desain |
-| Data duplikat di ERP | Jumlah log presensi ganda yang masuk ke ERP | 0 **[Usulan]** |
-| Presensi tidak terpetakan | Persentase log yang tidak memiliki NIK yang cocok | [Usulan] ditetapkan saat desain |
-| Pekerjaan manual rekonsiliasi | Waktu rekonsiliasi manual per bulan | Berkurang dibanding kondisi saat ini **[Usulan]** |
+1. Sinkronisasi berjalan sesuai interval yang diatur.
+2. Log merekam data yang gagal disinkronkan.
+3. Pekerjaan rekonsiliasi presensi akan full otomatis.
 
 ---
 
