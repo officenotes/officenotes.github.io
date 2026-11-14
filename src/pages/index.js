@@ -13,7 +13,7 @@ const PILLARS = [
   {
     title: '02. Zero-Ambiguity Specifications',
     description:
-      'Menyusun BRD, PRD, dan FSD lengkap dengan matriks Business Rules, skenario Edge-Case, serta aturan toleransi agar siap dieksekusi tim engineer.',
+      'Menyusun document Business Requirements Design lengkap dengan matriks Business Rules, skenario Edge-Case, serta aturan toleransi agar siap dieksekusi tim engineer.',
   },
   {
     title: '03. Data & System Alignment',
