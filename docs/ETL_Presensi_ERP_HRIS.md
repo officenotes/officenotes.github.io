@@ -93,8 +93,8 @@ Presensi karyawan dicatat oleh mesin face recognition, sedangkan pengolahan data
 |---|---|---|
 | Admin HR Klien | Klien | Pengguna ERP HRIS dan pemantau hasil presensi |
 | Tim IT Klien | Klien | Pemilik service setelah go-live, pengelola server dan database |
-| Tim Pengembang ETL | Penyedia | Pengembang dan penguji service, pendukung setelah go-live **[Usulan]** |
-| Vendor Mesin Face Recognition | Pihak ketiga | Penyedia sumber data log presensi **[Usulan]** |
+| Tim Pengembang ETL | IT Consultant | Pengembang dan penguji service, pendukung setelah go-live |
+| Vendor Mesin Face Recognition | Pihak ketiga | Penyedia sumber data log presensi |
 | Karyawan | Klien | Melakukan presensi |
 | Sistem ETL | Sistem | Menjalankan proses extract, transform, dan load |
 | ERP HRIS | Sistem | Menyimpan data presensi dan menghitung kehadiran |
@@ -117,7 +117,7 @@ flowchart TD
 |---|---|---|
 | 1 | Karyawan | Melakukan presensi di mesin face recognition |
 | 2 | Mesin | Menyimpan log presensi |
-| 3 | Admin HR | Mencocokkan data secara manual **[Usulan]** |
+| 3 | Admin HR | Mengambil data dari mesin kemudian melakukan rekap diluar sistem |
 | 4 | ERP HRIS | Menghitung kehadiran berdasarkan data yang tersedia |
 
 ### 7.2 Proses To-Be
@@ -149,17 +149,16 @@ flowchart TD
 
 | Aspek | As-Is | To-Be |
 |---|---|---|
-| Pengiriman data | Manual **[Usulan]** | Otomatis sesuai interval |
-| Pemetaan karyawan | Manual **[Usulan]** | Otomatis melalui NIK |
-| Data ganda | Tidak terdeteksi otomatis **[Usulan]** | Dilewati dan dicatat |
-| Kegagalan | Sulit dideteksi **[Usulan]** | Retry otomatis dan dicatat di log |
-| Pemantauan | Tidak tersedia **[Usulan]** | Melalui log run |
+| Pengiriman data | Manual | Otomatis sesuai interval |
+| Pemetaan karyawan | Manual | Otomatis melalui NIK |
+| Data ganda | Tidak terdeteksi otomatis | Dilewati dan dicatat |
+| Kegagalan | Sulit dideteksi | Retry otomatis dan dicatat di log |
+| Pemantauan | Tidak tersedia | Melalui log run |
 
 ---
 
 ## 8. Aturan Bisnis
 
-Seluruh aturan bersifat **[Usulan]**.
 
 ### 8.1 Aturan Penjadwal
 
@@ -191,14 +190,13 @@ Seluruh aturan bersifat **[Usulan]**.
 |---|---|
 | BR-LD-01 | Data dimuat langsung ke database ERP HRIS |
 | BR-LD-02 | Log yang sudah ada di ERP tidak dimuat ulang |
-| BR-LD-03 | Pemuatan dilakukan dalam satu transaksi per batch agar konsisten **[Usulan]** |
+| BR-LD-03 | Pemuatan dilakukan dalam satu transaksi per batch agar konsisten |
 
 ### 8.5 Aturan Retry dan Logging
 
 | ID | Aturan |
 |---|---|
-| BR-RT-01 | Kegagalan load diulang secara otomatis hingga batas retry yang ditetapkan **[Usulan]** |
-| BR-RT-02 | Jeda antar retry meningkat secara bertahap **[Usulan]** |
+| BR-RT-01 | Kegagalan load diulang secara otomatis hingga batas retry yang ditetapkan |
 | BR-LG-01 | Setiap run mencatat waktu mulai, waktu selesai, jumlah data diproses, berhasil, gagal, dan dilewati |
 | BR-LG-02 | Setiap log yang gagal dicatat beserta alasan dan ID karyawan di mesin |
 
@@ -206,7 +204,7 @@ Seluruh aturan bersifat **[Usulan]**.
 
 ## 9. Kebutuhan Bisnis
 
-Prioritas memakai skala MoSCoW. Seluruh prioritas bersifat **[Usulan]**.
+Prioritas memakai skala MoSCoW.
 
 ### 9.1 Modul Penjadwal
 
@@ -310,50 +308,15 @@ stateDiagram-v2
 | Pemetaan Karyawan | Hubungan ID karyawan di mesin dengan NIK |
 | Run Sinkronisasi | Catatan setiap run service |
 | Log Error | Catatan data yang gagal atau dilewati |
-| Data Presensi ERP | Tabel tujuan di database ERP HRIS **[Usulan]** |
+| Data Presensi ERP | Tabel tujuan di database ERP HRIS |
 
-### 11.2 Struktur Tabel Usulan
 
-**sync_run_log** [Usulan]
+### 11.2 Ketetapan Data
 
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| run_id | integer | PRIMARY KEY |
-| started_at | timestamp | Waktu mulai run |
-| finished_at | timestamp | Waktu selesai run |
-| status | varchar | Berjalan, Sukses, Sebagian, Gagal, Tanpa Data |
-| total_read | integer | Jumlah log dibaca |
-| total_loaded | integer | Jumlah log dimuat |
-| total_skipped | integer | Jumlah log dilewati |
-| total_failed | integer | Jumlah log gagal |
-
-**sync_error_log** [Usulan]
-
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| error_id | integer | PRIMARY KEY |
-| run_id | integer | FOREIGN KEY ke sync_run_log |
-| machine_emp_id | varchar | ID karyawan di mesin |
-| punch_time | timestamp | Waktu presensi |
-| error_code | varchar | Mengikuti Lampiran A |
-| error_message | varchar | Keterangan kesalahan |
-| retry_count | integer | Jumlah retry |
-| created_at | timestamp | DEFAULT CURRENT_TIMESTAMP |
-
-**employee_mapping** [Usulan]
-
-| Kolom | Tipe | Keterangan |
-|---|---|---|
-| machine_emp_id | varchar | ID karyawan di mesin |
-| nik | varchar | NIK karyawan di ERP HRIS |
-| is_active | boolean | Status pemetaan |
-
-### 11.3 Ketetapan Data
-
-- NIK dari ERP HRIS menjadi acuan identitas karyawan **[Usulan]**.
-- Log presensi dianggap sama jika memiliki NIK, waktu presensi, dan jenis presensi yang sama **[Usulan]**.
-- Nama tabel tujuan di ERP dan struktur kolomnya ditetapkan saat desain teknis **[Usulan]**.
-- Data presensi yang sudah dimuat tidak diubah oleh service ETL **[Usulan]**.
+- NIK dari ERP HRIS menjadi acuan identitas karyawan.
+- Log presensi dianggap sama jika memiliki NIK, waktu presensi, dan jenis presensi yang sama.
+- Nama tabel tujuan di ERP dan struktur kolomnya ditetapkan saat desain teknis.
+- Data presensi yang sudah dimuat tidak diubah oleh service ETL.
 
 ---
 
@@ -361,15 +324,15 @@ stateDiagram-v2
 
 | ID | Kategori | Kebutuhan |
 |---|---|---|
-| NFR-01 | Kinerja | Satu run selesai sebelum run berikutnya dijadwalkan **[Usulan]** |
-| NFR-02 | Kinerja | Satu run memproses jumlah log yang sesuai volume harian klien **[Usulan]** |
-| NFR-03 | Keandalan | Retry otomatis dengan jeda bertahap dan batas maksimum **[Usulan]** |
-| NFR-04 | Keandalan | Proses load bersifat idempotent, sehingga retry tidak menghasilkan data ganda **[Usulan]** |
-| NFR-05 | Ketersediaan | Service berjalan selama server klien aktif **[Usulan]** |
-| NFR-06 | Keamanan | Kredensial mesin dan database disimpan terenkripsi di server klien **[Usulan]** |
-| NFR-07 | Keamanan | Akses database menggunakan akun dengan hak terbatas **[Usulan]** |
-| NFR-08 | Auditabilitas | Log run dan log error disimpan minimal sesuai kebijakan klien **[Usulan]** |
-| NFR-09 | Pemeliharaan | Konfigurasi dipisahkan dari kode program **[Usulan]** |
+| NFR-01 | Kinerja | Satu run selesai sebelum run berikutnya dijadwalkan |
+| NFR-02 | Kinerja | Satu run memproses jumlah log yang sesuai volume harian klien |
+| NFR-03 | Keandalan | Retry otomatis dengan jeda bertahap dan batas maksimum |
+| NFR-04 | Keandalan | Proses load bersifat idempotent, sehingga retry tidak menghasilkan data ganda |
+| NFR-05 | Ketersediaan | Service berjalan selama server klien aktif |
+| NFR-06 | Keamanan | Kredensial mesin dan database disimpan terenkripsi di server klien |
+| NFR-07 | Keamanan | Akses database menggunakan akun dengan hak terbatas |
+| NFR-08 | Auditabilitas | Log run dan log error disimpan minimal sesuai kebijakan klien |
+| NFR-09 | Pemeliharaan | Konfigurasi dipisahkan dari kode program |
 
 ---
 
@@ -377,16 +340,15 @@ stateDiagram-v2
 
 ### 13.1 Asumsi
 
-1. Mesin face recognition menyediakan data log presensi yang dapat diakses oleh service **[Usulan]**.
-2. ID karyawan di mesin dapat dipetakan ke NIK di ERP HRIS **[Usulan]**.
-3. Database ERP HRIS dapat diakses langsung dari server klien **[Usulan]**.
-4. Perhitungan kehadiran di ERP berjalan setelah data presensi masuk **[Usulan]**.
+1. ID karyawan di mesin dapat dipetakan ke NIK di ERP HRIS.
+2. Database ERP HRIS dapat diakses langsung dari server klien.
+3. Perhitungan kehadiran di ERP berjalan setelah data presensi masuk.
 
 ### 13.2 Batasan
 
-1. Sinkronisasi hanya satu arah, dari mesin ke ERP **[Usulan]**.
-2. Hanya log presensi yang disinkronkan **[Usulan]**.
-3. Pemuatan langsung ke database ERP melewati lapisan aplikasi ERP, sehingga logika validasi ERP perlu dipastikan tetap berlaku **[Usulan]**.
+1. Sinkronisasi hanya satu arah, dari mesin ke ERP.
+2. Hanya log presensi yang disinkronkan.
+3. Pemuatan langsung ke database ERP melewati lapisan aplikasi ERP, sehingga logika validasi ERP perlu dipastikan tetap berlaku.
 
 ### 13.3 Dependensi
 
@@ -404,13 +366,13 @@ stateDiagram-v2
 
 | ID | Risiko | Dampak | Mitigasi |
 |---|---|---|---|
-| R1 | Retry menghasilkan data ganda di ERP | Perhitungan kehadiran salah | Pengecekan duplikat dan proses load idempotent **[Usulan]** |
-| R2 | ID karyawan di mesin tidak cocok dengan NIK | Data presensi tidak termuat | Pencatatan log tidak terpetakan dan pemeliharaan tabel pemetaan **[Usulan]** |
-| R3 | Struktur database ERP berubah setelah deployment | Load gagal | Dokumentasi struktur tabel dan prosedur perubahan bersama tim IT klien **[Usulan]** |
-| R4 | Load langsung ke database melewati validasi ERP | Data tidak konsisten dengan aturan ERP | Validasi data di ETL dan pengujian bersama tim ERP **[Usulan]** |
-| R5 | Mesin tidak dapat diakses | Data tertunda | Retry otomatis dan pencatatan kegagalan **[Usulan]** |
-| R6 | Volume log meningkat | Run melebihi interval | Pemantauan durasi run dan penyesuaian interval **[Usulan]** |
-| R7 | Pemilik pasca go-live belum siap mengelola | Service tidak terpantau | Dokumentasi operasional dan pelatihan tim IT klien **[Usulan]** |
+| R1 | Retry menghasilkan data ganda di ERP | Perhitungan kehadiran salah | Pengecekan duplikat dan proses load idempotent |
+| R2 | ID karyawan di mesin tidak cocok dengan NIK | Data presensi tidak termuat | Pencatatan log terkait data yang tidak terpetakan dan pembaharuan terhadap data NIK |
+| R3 | Struktur database ERP berubah setelah deployment | Load gagal | Dokumentasi struktur tabel dan prosedur perubahan bersama tim IT klien |
+| R4 | Load langsung ke database melewati validasi ERP | Data tidak konsisten dengan aturan ERP | Validasi data di ETL dan pengujian bersama tim ERP |
+| R5 | Mesin tidak dapat diakses | Data tertunda | Retry otomatis dan pencatatan kegagalan |
+| R6 | Volume log meningkat | Run melebihi interval | Pemantauan durasi run dan penyesuaian interval |
+| R7 | Pemilik pasca go-live belum siap mengelola | Service tidak terpantau | Dokumentasi operasional dan pelatihan tim IT klien |
 
 ---
 
