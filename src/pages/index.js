@@ -60,7 +60,7 @@ function HomepageHeader() {
           </h1>
           <p className={styles.heroSubtitle}>
             Dokumentasi terbuka berisi kumpulan studi kasus
-            rekayasa kebutuhan, pemodelan proses BPMN 2.0, serta catatan praktis seputar
+            rekayasa kebutuhan, pemodelan proses, serta catatan praktis seputar
             analisis proses dan transformasi digital.
           </p>
           <div className={styles.buttons}>
