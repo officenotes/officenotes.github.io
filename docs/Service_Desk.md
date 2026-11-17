@@ -111,13 +111,7 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 
 ### 6.1 Proses As-Is (Manual)
 
-```mermaid
-flowchart TD
-    A[User mengajukan request perbaikan ke vendor] --> B[Vendor menerima request]
-    B --> C[Admin vendor memilih teknisi yang kosong secara manual]
-    C --> D[Teknisi di-assign ke pekerjaan]
-    D --> E[Teknisi melakukan perbaikan]
-```
+![as-is ticketing](BPMN_AsIs_Service_Desk.png)
 
 | Langkah | Aktor | Aktivitas |
 |---|---|---|
@@ -127,29 +121,7 @@ flowchart TD
 
 ### 6.2 Proses To-Be (Otomatis)
 
-```mermaid
-flowchart TD
-    A[Partner Maker membuat request CM/PM/SM] --> B[Submit]
-    B --> C{Approval berjenjang oleh Partner Approver}
-    C -- Reject + alasan --> X[Status Rejected, notifikasi ke Requester]
-    C -- Approve penuh --> D[Tiket diteruskan ke Corporate]
-    D --> E[Sistem menjalankan auto-assignment]
-    E --> F{Ada teknisi berkompetensi sesuai dengan beban di bawah ambang?}
-    F -- Ya --> G[Assign ke teknisi terpilih]
-    F -- Tidak, semua high load --> H{Ada teknisi kompetensi sekunder atau umum dengan beban di bawah ambang?}
-    H -- Ya --> G
-    H -- Tidak --> I[Tiket masuk antrean dan notifikasi ke Supervisor Corporate]
-    I --> J[Supervisor Corporate assign manual]
-    J --> G
-    G --> K[Notifikasi ke Teknisi dan Requester]
-    K --> L[Teknisi: tiba, foto sebelum, In Progress]
-    L --> M{Perlu menunggu suku cadang/koordinasi?}
-    M -- Ya --> N[Status PENDING] --> L
-    M -- Tidak --> O[Foto sesudah, catatan teknis, tanda tangan]
-    O --> P[Status COMPLETED]
-    P --> Q[Tidak ada keluhan: CLOSED]
-    Q --> R[Sistem membuat laporan PDF]
-```
+[!to-be process service desk](BPMN_ToBe_Service_Desk.png)
 
 ### 6.3 Perbandingan As-Is dan To-Be
 
