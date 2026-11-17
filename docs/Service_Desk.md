@@ -121,7 +121,7 @@ Target angka di bawah merupakan **[Usulan]** dan perlu disepakati dengan stakeho
 
 ### 6.2 Proses To-Be (Otomatis)
 
-[!to-be process service desk](BPMN_ToBe_Service_Desk.png)
+![to-be process service desk](BPMN_ToBe_Service_Desk.png)
 
 ### 6.3 Perbandingan As-Is dan To-Be
 
